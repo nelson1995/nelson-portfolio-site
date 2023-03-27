@@ -2,7 +2,7 @@
 
 <h3>:celebrate Live demo</h3>
 
-Check the live demo <a href="https://nelson1995.github.io/nelson-portfolio-site/"><strong>here</strong></a>
+Check the live demo <a href="https://nelson-katale.github.io/nelson-portfolio-site/"><strong>here</strong></a>
 
 <h3>:books : Getting started</h3>
 

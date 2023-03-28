@@ -3,7 +3,11 @@
     class="grid place-items-center min-h-screen beige-colour"
     v-if="!apiResponse"
   >
-    loading data....
+    <breeding-rhombus-spinner
+      :animation-duration="1500"
+      :size="64"
+      color="#1a202c"
+    />
   </div>
   <div id="main" class="bg-beige" v-if="apiResponse">
     <section>
@@ -136,8 +140,10 @@
 </template>
 <script>
 import moment from "moment";
+import { BreedingRhombusSpinner } from "epic-spinners";
 export default {
   name: "HomePage",
+  components: { BreedingRhombusSpinner },
   data() {
     return {
       isDarkMode: false,

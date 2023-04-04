@@ -26,9 +26,9 @@
                 </a>
               </figure>
             </div>
-            <div class="text-left text-justify mt-5">
+            <div class="text-left text-justify p-5">
               <h2
-                class="title mb-6 text-gray-900 text-5xl font-extrabold tracking-tight dark:text-white"
+                class="title mb-6 text-gray-900 text-5xl font-extrabold dark:text-white"
               >
                 Nice to meet you,
               </h2>

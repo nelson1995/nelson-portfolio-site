@@ -1,30 +1,16 @@
-# This is a basic workflow to help you get started with Actions
-name: CI
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+name: Build Vue
+on: [push]
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  build_vue:
     runs-on: ubuntu-latest
-# Steps represent a sequence of tasks that will be executed as part of the job
+    name: Build Vue
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-    - uses: actions/setup-node@v1
+    - id: Build-Vue
+      uses: xRealNeon/VuePagesAction@1.0.1
+    - name: Vue to Github Pages
+      uses: xRealNeon/VuePagesAction@1.0.1
       with:
-        node-version: '10.x'
-    - run: npm install
-    - run: npm run build
-    - name: Deploy 🚀
-      uses: nelson1995/nelson-portfolio-site@releases
-      with:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: dist # The folder the action should deploy.
+        username: 'nelson1995'
+        reponame: 'nelson-portfolio-site'
+        token: ${{ secrets.ACCESS_TOKEN }} # Generate PAT(personal Access token) and go to settings > secrets and variables > Actions and add it there. 

@@ -185,11 +185,11 @@ export default {
       //If timing function wasn't cleared then abort function cancels the fetch request
       const id = setTimeout(() => controller.abort(), timeout);
       const headers = {
-        "X-Master-Key":
-          "$2b$10$lmLH75Okweov6TeGJq928uIcdmCCuzp4nWmDlLNaX35FvqvIf1h/C",
+        "X-Master-Key":"$2b$10$lmLH75Okweov6TeGJq928uIcdmCCuzp4nWmDlLNaX35FvqvIf1h/C",
       };
       const response = await fetch(resource, {
         ...options,
+        headers,
         signal: controller.signal, // signal connects fetch request to the abort controller
       });
       clearTimeout(id); //clear the abort timing function when fetch request completes before timeout.

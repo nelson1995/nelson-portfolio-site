@@ -23,7 +23,7 @@ jobs:
     - run: npm install
     - run: npm run build
     - name: Deploy 🚀
-      uses: nelson1995/nelson-portfolio-site@releases/v3
+      uses: nelson1995/nelson-portfolio-site@releases/v1
       with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages # The branch the action should deploy to.

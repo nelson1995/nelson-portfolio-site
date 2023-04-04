@@ -19,7 +19,7 @@
                 class="relative p-5 max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0">
                 <a href="#">
                   <img
-                    class="object-contain rounded-md w-80 h-fit"
+                    class="object-fill rounded-lg"
                     :src="apiResponse.basic_data.profile_photo"
                     alt="Nelson Katale"
                   />

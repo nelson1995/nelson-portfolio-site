@@ -26,12 +26,13 @@
                 </a>
               </figure>
             </div>
-            <div class="text-left text-justify p-5">
+            <div class="text-left text-justify mt-5">
               <h2
                 class="title mb-6 text-gray-900 text-5xl font-extrabold tracking-tight dark:text-white"
               >
                 Nice to meet you,
               </h2>
+              <br/>
               <blockqoute
                 class="text-lg place-items-center italic font-semibold text-gray-900 dark:text-white"
               >
@@ -117,7 +118,7 @@
               apiResponse.basic_data.name
             }}</a>
           </span>
-          <span class="flex mt-4 space-x-6 text-center sm:mt-0">
+          <span class="flex mt-4 space-x-6 sm:text-center">
             <div
               v-for="socialLink in apiResponse.basic_data.social_links"
               :key="socialLink.name"

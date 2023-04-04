@@ -20,7 +20,7 @@
               >
                 <a href="#">
                   <img
-                    class="rounded-md w-80 h-fit"
+                    class="object-contain rounded-md w-80 h-fit"
                     :src="apiResponse.basic_data.profile_photo"
                     alt="Nelson Katale"
                   />

@@ -13,4 +13,4 @@ jobs:
       with:
         username: 'nelson1995'
         reponame: 'nelson-portfolio-site'
-        token: ${{ secrets.ACCESS_TOKEN }} # Generate PAT(personal Access token) and go to settings > secrets and variables > Actions and add it there. 
+        token: ${{ secrets.GITHUB_TOKEN }} # Generate PAT(personal Access token) and go to settings > secrets and variables > Actions and add it there. 

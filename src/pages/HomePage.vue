@@ -16,8 +16,7 @@
           <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-2">
             <div class="p-4 flex justify-center mt-5">
               <figure
-                class="relative p-5 max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0"
-              >
+                class="relative p-5 max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0">
                 <a href="#">
                   <img
                     class="object-contain rounded-md w-80 h-fit"

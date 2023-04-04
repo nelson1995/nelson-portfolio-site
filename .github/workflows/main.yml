@@ -8,8 +8,6 @@ jobs:
     - uses: actions/checkout@v3
     - id: Build-Vue
       uses: xRealNeon/VuePagesAction@1.0.1
-    - name: Vue to Github Pages
-      uses: xRealNeon/VuePagesAction@1.0.1
       with:
         username: nelson1995
         reponame: nelson-portfolio-site

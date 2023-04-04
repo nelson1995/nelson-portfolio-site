@@ -15,7 +15,6 @@ const fs = require("fs");
     await execa("git", ["push", "origin", "HEAD:gh-pages", "--force"]);
     await execa("rm", ["-r", folderName]);
     await execa("git", ["checkout", "-f", "master"]);
-    await execa("git", ["branch", "-D", "gh-pages"]);
     console.log("Vue app successfully deployed. Check your repository settings");
   } catch (e) {
     // eslint-disable-next-line no-console

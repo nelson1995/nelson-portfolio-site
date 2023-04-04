@@ -11,6 +11,6 @@ jobs:
     - name: Vue to Github Pages
       uses: xRealNeon/VuePagesAction@1.0.1
       with:
-        username: 'nelson1995'
-        reponame: 'nelson-portfolio-site'
+        username: nelson1995
+        reponame: nelson-portfolio-site
         token: ${{ secrets.GITHUB_TOKEN }} # Generate PAT(personal Access token) and go to settings > secrets and variables > Actions and add it there. 

@@ -167,8 +167,8 @@ export default {
     async fetchData() {
       try {
         const url =
-          "https://api.jsonbin.io/v3/b/6422c299c0e7653a0597d5ca?meta=false";
-        const url1 = `personal_details.json`;
+          "https://api.jsonbin.io/v3/b/642c20baace6f33a22048009?meta=false";
+        // const url1 = `personal_details.json`;
         this.apiResponse = await (
           await this.apiTimeout(url, {
             timeout: 8000,

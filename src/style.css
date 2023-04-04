@@ -17,3 +17,8 @@ p{
 .beige-colour{
   background:#DDD0C8;
 }
+
+/* applying transition on changing theme */
+body * {
+	@apply transition-colors duration-300 delay-75; 
+}

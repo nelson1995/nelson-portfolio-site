@@ -16,12 +16,12 @@
           <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-2">
             <div class="p-4 flex justify-center mt-5">
               <figure
-                class="relative max-w-lg transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0"
+                class="relative p-5 max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0"
               >
                 <a href="#">
                   <img
-                    class="rounded-lg"
-                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/content-gallery-3.png"
+                    class="rounded-md w-80 h-fit"
+                    :src="apiResponse.basic_data.profile_photo"
                     alt="Nelson Katale"
                   />
                 </a>
@@ -68,15 +68,15 @@
                 <a
                   :href="'mailTo:' + apiResponse.basic_data.email"
                   class="font-extrabold hover:underline"
-                  >{{ apiResponse.basic_data.email }}</a
                 >
+                  {{ apiResponse.basic_data.email }}
+                </a>
               </p>
             </div>
           </div>
         </div>
       </div>
     </section>
-
     <button
       @click="toggleDarkMode()"
       aria-label="floating action button"
@@ -109,7 +109,6 @@
         ></path>
       </svg>
     </button>
-
     <footer>
       <div class="mx-auto w-full container p-4 sm:p-6">
         <div class="sm:flex sm:items-center sm:justify-between">
@@ -138,12 +137,15 @@
     </footer>
   </div>
 </template>
+
 <script>
 import moment from "moment";
 import { BreedingRhombusSpinner } from "epic-spinners";
 export default {
   name: "HomePage",
-  components: { BreedingRhombusSpinner },
+  components: {
+    BreedingRhombusSpinner,
+  },
   data() {
     return {
       isDarkMode: false,
@@ -164,8 +166,11 @@ export default {
   methods: {
     async fetchData() {
       try {
+        const url =
+          "https://api.jsonbin.io/v3/b/6422c299c0e7653a0597d5ca?meta=false";
+        const url1 = `personal_details.json`;
         this.apiResponse = await (
-          await this.apiTimeout(`personal_details.json`, {
+          await this.apiTimeout(url, {
             timeout: 8000,
           })
         ).json();
@@ -176,15 +181,17 @@ export default {
     async apiTimeout(resource, options = {}) {
       const { timeout = 8000 } = options; //set timeout to 8 secs
       const controller = new AbortController();
-
       // start the timing function. After timeout,
       //If timing function wasn't cleared then abort function cancels the fetch request
       const id = setTimeout(() => controller.abort(), timeout);
+      const headers = {
+        "X-Master-Key":
+          "$2b$10$lmLH75Okweov6TeGJq928uIcdmCCuzp4nWmDlLNaX35FvqvIf1h/C",
+      };
       const response = await fetch(resource, {
         ...options,
         signal: controller.signal, // signal connects fetch request to the abort controller
       });
-
       clearTimeout(id); //clear the abort timing function when fetch request completes before timeout.
       return response;
     },
@@ -192,9 +199,7 @@ export default {
       let el = document.getElementById("main");
       let lightIcon = document.getElementById("theme-toggle-light-icon");
       let moonIcon = document.getElementById("theme-toggle-dark-icon");
-
       //  check if dark mode is enabled
-
       if (el.classList.contains("dark")) {
         el.classList.remove("dark");
         el.classList.remove("bg-dark");
